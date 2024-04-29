@@ -66,8 +66,13 @@ export default {
     },
     async consumirApi() {
       try {
-        const data = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const postsJsonPlaceHolder = await data.json();
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+        if (!response.ok) {
+          console.error(`Http ERROR Status Code: ${response.status}`);
+          return;
+        }
+        const postsJsonPlaceHolder = await response.json();
         this.posts = postsJsonPlaceHolder;
       } catch (error) {
         console.log(error);

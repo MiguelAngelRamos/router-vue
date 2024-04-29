@@ -16,6 +16,7 @@ const router = createRouter({
 })
 
 export default router
-
-//* http://127.0.0.1:5173/user/7
+//* http://127.0.0.1:5173 -> Base
+//*                       /user/:id
+//* http://127.0.0.1:5173/user/
 // http://localhost:5173/
